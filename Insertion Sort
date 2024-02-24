@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+int const N = 9;
+int main() {
+	int const n = 5;
+	int arr[n] = { 8,9,6,2,7 };
+	cout << "Array before sort:\n";
+	for (int i = 0; i < 5; i++)
+	{
+		cout << arr[i] << "  ";
+	}
+	int x, j;
+	for (int i = 1; i < n; i++) {
+		x = arr[i];
+		j = i - 1;
+		while (j >= 0 && arr[j] > x) {
+			arr[j + 1] = arr[j];
+			j--;
+		}
+		arr[j + 1] = x;
+	}
+	cout << "\nArray after sort:\n";
+	for (int i = 0; i < 5; i++)
+	{
+		cout << arr[i] << "  ";
+	}
+}
+
