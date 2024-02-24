@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+int main() {
+	const int n = 5;
+	int key;
+	int arr[5] = { 1,2,3,4,5 };
+	for (int i = 0; i < n; i++) {
+		cout << arr[i] << "\t";
+	}
+	cout << "\nEnter no to search: ";
+	cin >> key;
+	int e = n;
+	int s = 0;
+	int mid = int((s + e) / 2);
+	while (e >= s) {
+		mid = int((s + e) / 2);
+		if (arr[mid] == key) {
+			cout << "\nThe values is at " << mid << " index";
+			break;
+		}
+		else if (key > arr[mid]) {
+			s = mid + 1;
+			continue;
+		}
+		else if (key < arr[mid]) {
+			e = mid - 1;
+			continue;
+		}	
+	}
+}
